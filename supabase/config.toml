@@ -1,0 +1,38 @@
+# Supabase project configuration
+# Set project_id to your Supabase project ref.
+
+# To run locally:
+#   1. Install Supabase CLI: https://supabase.com/docs/guides/cli
+#   2. supabase init        (if first time)
+#   3. supabase login
+#   4. supabase link --project-ref <project_id>
+#   5. supabase db push     (apply migrations)
+#   6. supabase functions deploy <name>  (deploy edge functions)
+
+project_id = ""
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["https://localhost:3000"]
+jwt_expiry = 3600
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+double_confirm_changes = true
+enable_confirmations = false

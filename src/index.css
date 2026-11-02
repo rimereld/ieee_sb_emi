@@ -1,0 +1,294 @@
+/* IEEE EMI Student Branch — IEEE Blue #00679F · Branch Teal #0197B2 · Shine Navy #013D5F · Shine Glow #3BB8FF · Montserrat / Inter */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens — names follow shadcn/ui conventions. */
+
+@layer base {
+  :root {
+    /* IEEE SB EMI palette — taken from the branch logos */
+    --ieee-blue: 201 100% 31%;      /* #00679F  IEEE master brand blue */
+    --ieee-teal: 189 99% 35%;       /* #0197B2  branch lockup background */
+    --ieee-navy: 202 98% 19%;       /* #013D5F  "Let's give it a shine" lettering */
+    --ieee-royal: 214 96% 31%;      /* #03459B  EMI mark blue */
+    --ieee-shine: 202 100% 62%;     /* #3BB8FF  shine flare glow */
+
+    /* Surfaces — clean white paper with cool blue-grey tints */
+    --background: 0 0% 100%;
+    --foreground: 204 80% 14%;
+    --header-fg-transparent: 0 0% 100%;
+    --primary-on-media: 0 0% 100%;
+    --primary-on-media-foreground: 201 100% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 204 80% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 204 80% 14%;
+
+    --primary: var(--ieee-blue);
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 196 60% 95%;
+    --secondary-foreground: 201 100% 25%;
+
+    --muted: 200 40% 96.5%;
+    --muted-foreground: 204 22% 38%;
+
+    --accent: 189 70% 93%;
+    --accent-foreground: 201 100% 25%;
+
+    --destructive: 0 72% 48%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 160 70% 32%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 203 32% 88%;
+    --input: 203 30% 82%;
+    --ring: var(--ieee-blue);
+
+    --radius: 0.4rem;
+
+    --shadow-sm: 0 1px 2px 0 hsl(204 80% 14% / 0.05), 0 1px 3px 0 hsl(204 80% 14% / 0.07);
+    --shadow-md: 0 2px 4px -1px hsl(204 80% 14% / 0.06), 0 8px 16px -4px hsl(204 80% 14% / 0.09);
+    --shadow-lg: 0 4px 8px -2px hsl(204 80% 14% / 0.07), 0 20px 40px -8px hsl(204 80% 14% / 0.14);
+    --shadow-xl: 0 8px 16px -4px hsl(204 80% 14% / 0.08), 0 32px 64px -12px hsl(204 80% 14% / 0.18);
+    --shadow-glow: 0 0 0 1px hsl(var(--ieee-shine) / 0.25), 0 8px 32px -8px hsl(var(--ieee-shine) / 0.55);
+
+    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-display: 'Montserrat', 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 204 80% 14%;
+    --sidebar-primary: var(--ieee-blue);
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 40% 96%;
+    --sidebar-accent-foreground: 204 80% 14%;
+    --sidebar-border: 203 32% 88%;
+    --sidebar-ring: var(--ieee-blue);
+  }
+
+  .dark {
+    --background: 204 80% 7%;
+    --foreground: 200 40% 96%;
+    --card: 204 70% 10%;
+    --card-foreground: 200 40% 96%;
+    --popover: 204 70% 10%;
+    --popover-foreground: 200 40% 96%;
+    --primary: var(--ieee-shine);
+    --primary-foreground: 204 80% 8%;
+    --secondary: 204 50% 15%;
+    --secondary-foreground: 200 40% 96%;
+    --muted: 204 50% 13%;
+    --muted-foreground: 202 20% 68%;
+    --accent: 189 60% 18%;
+    --accent-foreground: 189 80% 80%;
+    --destructive: 0 62% 46%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 160 50% 42%;
+    --success-foreground: 0 0% 100%;
+    --border: 204 45% 18%;
+    --input: 204 45% 20%;
+    --ring: var(--ieee-shine);
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.30), 0 1px 3px 0 hsl(0 0% 0% / 0.40);
+    --shadow-md: 0 2px 4px -1px hsl(0 0% 0% / 0.35), 0 8px 16px -4px hsl(0 0% 0% / 0.45);
+    --shadow-lg: 0 4px 8px -2px hsl(0 0% 0% / 0.40), 0 20px 40px -8px hsl(0 0% 0% / 0.55);
+    --shadow-xl: 0 8px 16px -4px hsl(0 0% 0% / 0.45), 0 32px 64px -12px hsl(0 0% 0% / 0.65);
+    --shadow-glow: 0 0 0 1px hsl(var(--ieee-shine) / 0.25), 0 8px 40px -8px hsl(var(--ieee-shine) / 0.55);
+    --sidebar-background: 204 80% 8%;
+    --sidebar-foreground: 200 40% 92%;
+    --sidebar-primary: var(--ieee-shine);
+    --sidebar-primary-foreground: 204 80% 8%;
+    --sidebar-accent: 204 50% 15%;
+    --sidebar-accent-foreground: 200 40% 96%;
+    --sidebar-border: 204 45% 18%;
+    --sidebar-ring: var(--ieee-shine);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'cv11', 'ss01';
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Premium headings — display font, tight tracking, balanced wrapping */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  h1 { letter-spacing: -0.03em; line-height: 1.04; }
+  h2 { letter-spacing: -0.026em; line-height: 1.1; }
+
+  p { text-wrap: pretty; }
+
+  ::selection {
+    background-color: hsl(var(--primary) / 0.18);
+    color: hsl(var(--foreground));
+  }
+
+  input, textarea, select { border-radius: 0.15rem; }
+  input::placeholder, textarea::placeholder { color: hsl(var(--muted-foreground) / 0.8); }
+  :focus-visible { outline-color: hsl(var(--primary)); }
+
+  /* Refined scrollbar */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.30);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground) / 0.50); background-clip: padding-box; }
+}
+
+/* ── Utilities ── */
+@layer components {
+  /* Glassy surface (nav bars, floating cards) */
+  .glass {
+    background-color: hsl(var(--background) / 0.65);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+  }
+
+  /* Subtle premium gradient text for hero headlines */
+  .text-gradient {
+    background-image: linear-gradient(135deg, hsl(var(--foreground)), hsl(var(--primary)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Hover-lift interaction for cards/buttons */
+  .hover-lift {
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .hover-lift:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+}
+
+@layer components {
+  .tech-grid {
+    background-image: linear-gradient(to right, hsl(var(--border) / 0.24) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--border) / 0.24) 1px, transparent 1px), radial-gradient(ellipse at 75% 25%, hsl(var(--primary) / 0.10), transparent 48%);
+    background-size: 48px 48px, 48px 48px, auto;
+  }
+  .tech-panel { box-shadow: inset 0 0 55px hsl(var(--primary) / 0.06), 0 0 70px hsl(var(--primary) / 0.07); }
+  .hero-shine::before {
+    content: "";
+    position: absolute;
+    inset: -45% -35%;
+    background: linear-gradient(112deg, transparent 42%, hsl(var(--primary) / 0.025) 47%, hsl(var(--ieee-shine) / 0.22) 50%, hsl(0 0% 100% / 0.16) 51%, hsl(var(--primary) / 0.035) 55%, transparent 61%);
+    transform: translateX(-65%) rotate(-8deg);
+    animation: hero-shine-sweep 8s ease-in-out infinite;
+    mix-blend-mode: screen;
+  }
+  @keyframes hero-shine-sweep {
+    0%, 18% { transform: translateX(-65%) rotate(-8deg); opacity: 0; }
+    28% { opacity: 1; }
+    62% { transform: translateX(65%) rotate(-8deg); opacity: 0.75; }
+    100% { transform: translateX(65%) rotate(-8deg); opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-shine::before { animation: none; }
+  }
+}
+
+/* On-media scope: wrap content that sits on a photo or dark scrim. */
+.on-media {
+  --background: 0 0% 7%;
+  --foreground: 0 0% 100%;
+  --card: 0 0% 10%;
+  --card-foreground: 0 0% 100%;
+  --popover: 0 0% 10%;
+  --popover-foreground: 0 0% 100%;
+  --primary: var(--primary-on-media, 0 0% 100%);
+  --primary-foreground: var(--primary-on-media-foreground, 0 0% 8%);
+  --secondary: 0 0% 16%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 16%;
+  --muted-foreground: 0 0% 82%;
+  --accent: 0 0% 20%;
+  --accent-foreground: 0 0% 100%;
+  --border: 0 0% 82%;
+  --input: 0 0% 82%;
+  --ring: 0 0% 100%;
+  color: hsl(var(--foreground));
+}
+
+/* ── IEEE SB EMI brand layer ─────────────────────────────────────────────── */
+@layer components {
+  /* Teal → IEEE blue → navy band, same family as the branch lockup background */
+  .brand-band {
+    background:
+      radial-gradient(ellipse 60% 70% at 85% 15%, hsl(var(--ieee-shine) / 0.35), transparent 60%),
+      linear-gradient(135deg, hsl(var(--ieee-teal)) 0%, hsl(var(--ieee-blue)) 52%, hsl(var(--ieee-navy)) 100%);
+  }
+  .brand-band.tech-grid {
+    background-image:
+      linear-gradient(to right, hsl(0 0% 100% / 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(0 0% 100% / 0.07) 1px, transparent 1px),
+      radial-gradient(ellipse 60% 70% at 85% 15%, hsl(var(--ieee-shine) / 0.35), transparent 60%),
+      linear-gradient(135deg, hsl(var(--ieee-teal)) 0%, hsl(var(--ieee-blue)) 52%, hsl(var(--ieee-navy)) 100%);
+    background-size: 48px 48px, 48px 48px, auto, auto;
+  }
+  /* "SHINE" treatment: heavy italic caps, navy → blue */
+  .shine-type {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .text-shine {
+    background-image: linear-gradient(100deg, hsl(var(--ieee-navy)) 0%, hsl(var(--ieee-blue)) 55%, hsl(var(--ieee-shine)) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .on-brand .text-shine {
+    background-image: linear-gradient(100deg, #fff 0%, hsl(196 100% 88%) 55%, hsl(var(--ieee-shine)) 100%);
+  }
+  /* Horizontal flare line, echoing the light streak through "SHINE" */
+  .flare-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--ieee-shine) / 0.9) 50%, transparent);
+    box-shadow: 0 0 12px hsl(var(--ieee-shine) / 0.7);
+  }
+  .flare-star {
+    background: radial-gradient(circle, #fff 0%, hsl(var(--ieee-shine)) 30%, transparent 70%);
+    filter: blur(0.5px);
+  }
+  /* Double rule under the lockup */
+  .brand-rule { border-top: 1px solid currentColor; border-bottom: 1px solid currentColor; height: 4px; opacity: 0.5; }
+}
+
+/* Scope for content sitting on the blue brand band */
+.on-brand {
+  --foreground: 0 0% 100%;
+  --muted-foreground: 196 60% 88%;
+  --primary: 0 0% 100%;
+  --primary-foreground: 201 100% 25%;
+  --border: 197 75% 62%;
+  --card: 202 98% 19%;
+  --accent: 0 0% 100%;
+  --accent-foreground: 201 100% 25%;
+  --input: 197 75% 70%;
+  --ring: 0 0% 100%;
+  color: hsl(var(--foreground));
+}
