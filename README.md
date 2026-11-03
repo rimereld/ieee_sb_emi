@@ -19,7 +19,7 @@ npm run dev            # http://localhost:5173
 ## Deploy (Vercel)
 
 1. Import this repo at [vercel.com/new](https://vercel.com/new) — Vite is detected automatically.
-2. Add `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` under **Settings → Environment Variables**.
+2. (Optional) override the Supabase keys under **Settings → Environment Variables**.
 3. Deploy. Every push to `main` redeploys.
 4. Custom domain: **Settings → Domains**, then add the DNS records Vercel shows at your registrar.
 
@@ -32,7 +32,8 @@ Create them by running `supabase/migrations/20261102000000_create_form_tables.sq
 in the Supabase SQL editor (or `supabase db push`). Visitors can only insert;
 read submissions in the Supabase dashboard.
 
-Without the env keys the site still works — the forms show a “not connected” message.
+The public project URL and anon key are set as defaults in `src/lib/supabase.ts`,
+so no environment variables are required. Setting `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY` overrides them.
 
 ## Brand
 
