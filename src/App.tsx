@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { ErrorBoundary } from "./components/ErrorBoundary"
 import ScrollToTop from "./components/ScrollToTop"
+import ShineCursor from "./components/ShineCursor"
 import Index from "./pages/Index"
 import About from "./pages/About"
 import Projects from "./pages/Projects"
@@ -12,6 +13,7 @@ const App = () => (
   <ErrorBoundary>
     <BrowserRouter>
       <ScrollToTop />
+      <ShineCursor />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<About />} />

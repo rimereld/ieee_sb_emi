@@ -292,3 +292,60 @@
   --ring: 0 0% 100%;
   color: hsl(var(--foreground));
 }
+
+/* ── Shine cursor: the light that follows the mouse (see ShineCursor.tsx) ── */
+.shine-cursor-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  overflow: hidden;
+  mix-blend-mode: screen; /* glows on blue/navy, invisible on white */
+}
+.shine-cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  will-change: transform;
+}
+.shine-cursor > span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  translate: -50% -50%;
+  border-radius: 9999px;
+}
+.shine-cursor__halo {
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, hsl(var(--ieee-shine) / 0.55) 0%, hsl(var(--ieee-blue) / 0.25) 30%, transparent 68%);
+}
+.shine-cursor__streak {
+  width: 520px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, hsl(var(--ieee-shine) / 0.9) 35%, #fff 50%, hsl(var(--ieee-shine) / 0.9) 65%, transparent);
+  box-shadow: 0 0 10px hsl(var(--ieee-shine) / 0.9), 0 0 24px hsl(var(--ieee-shine) / 0.5);
+}
+.shine-cursor__streak--tilt {
+  width: 240px;
+  rotate: -72deg; /* the tilted ray through the "I" in SHINE */
+  opacity: 0.75;
+}
+.shine-cursor__core {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  box-shadow: 0 0 10px 3px #fff, 0 0 28px 8px hsl(var(--ieee-shine)), 0 0 60px 18px hsl(var(--ieee-shine) / 0.5);
+  animation: shine-cursor-pulse 2.4s ease-in-out infinite;
+}
+@keyframes shine-cursor-pulse {
+  0%, 100% { scale: 1; }
+  50% { scale: 1.25; }
+}
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .shine-cursor-layer { display: none; }
+}
