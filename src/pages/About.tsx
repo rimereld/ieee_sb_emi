@@ -28,6 +28,7 @@ const cells = [
   ] },
   { name: "External communication", members: [
     { name: "Sara Ouahmane", role: "Member", focus: "Relations with partners and the public", linkedin: "https://www.linkedin.com/in/sara-ouahmane-579363378" },
+    { name: "Hiba Rajeb", role: "Member", focus: "Relations with partners and the public", linkedin: "https://www.linkedin.com/in/hiba-rajeb-608169387" },
   ] },
 ]
 
