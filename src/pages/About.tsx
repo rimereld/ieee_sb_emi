@@ -13,9 +13,9 @@ const leaders = [
 const initials = (name: string) => name.split(" ").filter(Boolean).map((w) => w[0]).join("").slice(0, 2).toUpperCase()
 
 const cells = [
-  { name: "Add cell name", members: [{ name: "Add member name", role: "Cell lead", focus: "Add their field of interest", linkedin: "" }, { name: "Add member name", role: "Member", focus: "Add their field of interest", linkedin: "" }] },
-  { name: "Add cell name", members: [{ name: "Add member name", role: "Cell lead", focus: "Add their field of interest", linkedin: "" }, { name: "Add member name", role: "Member", focus: "Add their field of interest", linkedin: "" }] },
-  { name: "Add cell name", members: [{ name: "Add member name", role: "Cell lead", focus: "Add their field of interest", linkedin: "" }, { name: "Add member name", role: "Member", focus: "Add their field of interest", linkedin: "" }] },
+  { name: "Sponsoring", members: [{ name: "Wiam Abied", role: "Cell lead", focus: "Head of the sponsoring cell", linkedin: "https://www.linkedin.com/in/wiam-abied" }, { name: "Rachid Zguit", role: "Member", focus: "Partnerships and sponsorship", linkedin: "https://www.linkedin.com/in/rachid-zguit-631aa0335" }] },
+  { name: "Media", members: [{ name: "Zineb Afifi", role: "Cell lead", focus: "Head of the media cell", linkedin: "https://www.linkedin.com/in/zineb-afifi-197557373" }] },
+  { name: "Projects", members: [{ name: "Mohammed Aouine", role: "Cell lead", focus: "Head of the projects cell", linkedin: "https://www.linkedin.com/in/mohamed-aouine-9a143429a" }] },
 ]
 
 export default function About() {
