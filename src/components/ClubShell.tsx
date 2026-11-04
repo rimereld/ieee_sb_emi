@@ -18,7 +18,11 @@ function ClubHeader() {
   const transparent = isHome && !scrolled && !menuOpen
 
   useEffect(() => {
-    const update = () => setScrolled(window.scrollY > 24)
+    // Stay transparent over the home page's dark scroll story, solid after it.
+    const update = () => {
+      const story = document.getElementById("home-story")
+      setScrolled(story ? story.getBoundingClientRect().bottom <= 72 : window.scrollY > 24)
+    }
     update()
     window.addEventListener("scroll", update, { passive: true })
     return () => window.removeEventListener("scroll", update)

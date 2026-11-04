@@ -349,3 +349,74 @@
 @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
   .shine-cursor-layer { display: none; }
 }
+
+/* ── Home scroll story (see ScrollStory.tsx) ── */
+.story-bg {
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 42%, hsl(205 90% 32% / 0.55), transparent 70%),
+    radial-gradient(ellipse 120% 80% at 50% 110%, hsl(210 85% 18% / 0.9), transparent 70%),
+    linear-gradient(180deg, hsl(213 70% 6%) 0%, hsl(210 75% 9%) 50%, hsl(213 70% 6%) 100%);
+  color: #fff;
+}
+.story-grain {
+  background-image: radial-gradient(hsl(0 0% 100% / 0.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+}
+.story-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 45%, hsl(205 80% 80%) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 6px 30px hsl(var(--ieee-shine) / 0.25));
+}
+/* horizontal light streak the star travels along */
+.story-streak {
+  width: min(64vw, 760px);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, hsl(var(--ieee-shine) / 0.7) 30%, #fff 50%, hsl(var(--ieee-shine) / 0.7) 70%, transparent);
+  box-shadow: 0 0 14px hsl(var(--ieee-shine) / 0.8);
+}
+.story-star { position: relative; display: block; width: 0; height: 0; mix-blend-mode: screen; }
+.story-star > span { position: absolute; left: 0; top: 0; translate: -50% -50%; border-radius: 9999px; }
+.story-star__halo { width: 340px; height: 340px; background: radial-gradient(circle, hsl(var(--ieee-shine) / 0.55) 0%, hsl(var(--ieee-blue) / 0.25) 30%, transparent 68%); }
+.story-star__streak { width: 300px; height: 2px; background: linear-gradient(90deg, transparent, hsl(var(--ieee-shine)) 35%, #fff 50%, hsl(var(--ieee-shine)) 65%, transparent); box-shadow: 0 0 12px hsl(var(--ieee-shine)); }
+.story-star__streak--tilt { width: 150px; rotate: -72deg; opacity: 0.7; }
+.story-star__core { width: 16px; height: 16px; background: #fff; box-shadow: 0 0 12px 4px #fff, 0 0 34px 10px hsl(var(--ieee-shine)), 0 0 80px 26px hsl(var(--ieee-shine) / 0.5); animation: shine-cursor-pulse 2.4s ease-in-out infinite; }
+.story-star--md .story-star__halo { width: 260px; height: 260px; }
+.story-star--md .story-star__streak { width: 200px; }
+/* the two beams the lamp casts down onto the cards */
+.story-beam {
+  position: absolute; left: 0; top: 0;
+  width: min(34vw, 380px); height: 4px; margin-top: -2px;
+  transform-origin: 0 50%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #fff 0%, hsl(var(--ieee-shine)) 25%, hsl(var(--ieee-shine) / 0.6) 70%, transparent 100%);
+  box-shadow: 0 0 14px hsl(var(--ieee-shine)), 0 0 34px hsl(var(--ieee-shine) / 0.55);
+  mix-blend-mode: screen;
+}
+.story-beam--right { rotate: 13deg; }
+.story-beam--left { rotate: 167deg; }
+.story-cone {
+  position: absolute; left: 50%; top: 8px; translate: -50% 0;
+  width: min(90vw, 980px); height: 380px;
+  background: radial-gradient(ellipse 50% 60% at 50% 0%, hsl(var(--ieee-shine) / 0.28), transparent 70%);
+  pointer-events: none;
+}
+.story-card {
+  background: linear-gradient(180deg, hsl(210 60% 20% / 0.55), hsl(213 60% 10% / 0.55));
+  border: 1px solid hsl(0 0% 100% / 0.1);
+  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.08), 0 20px 40px -20px hsl(213 80% 3% / 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.story-card::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, hsl(var(--ieee-shine) / 0.22), transparent 70%);
+}
+.story-card:hover { border-color: hsl(var(--ieee-shine) / 0.5); transform: translateY(-3px); }
