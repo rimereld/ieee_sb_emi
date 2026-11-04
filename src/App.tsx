@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { ErrorBoundary } from "./components/ErrorBoundary"
 import ScrollToTop from "./components/ScrollToTop"
 import ShineCursor from "./components/ShineCursor"
+import SparkHud from "./components/SparkHud"
 import Index from "./pages/Index"
 import About from "./pages/About"
 import Projects from "./pages/Projects"
@@ -14,6 +15,7 @@ const App = () => (
     <BrowserRouter>
       <ScrollToTop />
       <ShineCursor />
+      <SparkHud />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<About />} />

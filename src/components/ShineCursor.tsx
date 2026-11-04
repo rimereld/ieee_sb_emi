@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react"
+import { TOTAL_SPARKS, useSparks } from "@/lib/sparks"
 
 /**
  * ShineCursor — a "Let's give it a shine" light that trails the mouse.
@@ -9,9 +10,26 @@ import { useEffect, useRef } from "react"
  *
  * Only runs on devices with a real mouse and when the visitor hasn't asked for
  * reduced motion; touch screens never see it.
+ *
+ * Gamified: every spark you catch makes the light flash and grow a little
+ * stronger (see Spark.tsx / lib/sparks.ts).
  */
 export function ShineCursor() {
   const lightRef = useRef<HTMLDivElement>(null)
+  const level = useSparks().length / TOTAL_SPARKS // 0 → 1
+
+  // Flash on each catch
+  useEffect(() => {
+    const onCatch = () => {
+      const el = lightRef.current
+      if (!el) return
+      el.classList.remove("shine-cursor--flash")
+      void el.offsetWidth // restart the animation
+      el.classList.add("shine-cursor--flash")
+    }
+    window.addEventListener("spark:collected", onCatch)
+    return () => window.removeEventListener("spark:collected", onCatch)
+  }, [])
 
   useEffect(() => {
     const el = lightRef.current
@@ -66,7 +84,7 @@ export function ShineCursor() {
   }, [])
 
   return (
-    <div aria-hidden="true" className="shine-cursor-layer">
+    <div aria-hidden="true" className="shine-cursor-layer" style={{ ["--shine-level" as string]: level }}>
       <div ref={lightRef} className="shine-cursor">
         <span className="shine-cursor__halo" />
         <span className="shine-cursor__streak" />

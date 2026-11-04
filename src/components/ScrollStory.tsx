@@ -1,6 +1,7 @@
 import { useRef, type ReactNode } from "react"
 import { Link } from "react-router-dom"
 import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion"
+import { Spark } from "@/components/Spark"
 
 /**
  * ScrollStory — the cinematic opening of the home page.
@@ -179,6 +180,7 @@ export function ScrollStory() {
 
         {/* Screen 1 */}
         <motion.div className="absolute inset-0 flex flex-col items-center justify-center pt-16" style={{ opacity: oneOpacity, y: oneY, filter: oneBlur, pointerEvents: onePointer }}>
+          <Spark id="home-hero" className="left-[12%] top-[30%] md:left-[16%]" />
           <Echo spread={oneSpread} direction={1}><ScreenOne /></Echo>
           {/* slogan on the light streak; the star starts here and slides down as you scroll */}
           <div className="relative mt-7 flex w-full justify-center">
@@ -194,6 +196,7 @@ export function ScrollStory() {
 
         {/* Screen 2 */}
         <motion.div className="absolute inset-0 flex flex-col items-center justify-center pb-6 pt-20" style={{ opacity: twoOpacity, pointerEvents: twoPointer }}>
+          <Spark id="home-plan" className="right-[8%] top-[22%] md:right-[12%]" />
           <motion.div className="w-full" style={{ y: twoY, filter: twoBlur }}><Echo spread={twoSpread} direction={-1}><ScreenTwo /></Echo></motion.div>
           <motion.div className="w-full" style={{ opacity: lampOpacity }}><Lamp beams={beams} glow={glow} /></motion.div>
           <div className="mx-auto grid w-full max-w-5xl gap-2.5 px-5 md:grid-cols-3 md:gap-4 md:px-8">

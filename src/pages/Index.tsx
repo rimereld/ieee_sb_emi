@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ClubLayout } from "@/components/ClubShell"
 import { MotionItem, MotionReveal } from "@/components/MotionReveal"
 import { ScrollStory } from "@/components/ScrollStory"
+import { Spark } from "@/components/Spark"
 
 const Index = () => (
   <ClubLayout>
@@ -14,7 +15,8 @@ const Index = () => (
 
       <section className="border-b border-border bg-muted py-7"><div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-8 gap-y-3 px-5 font-display text-[11px] font-bold uppercase tracking-[0.2em] text-ieee-navy md:px-8"><span>Learn systems</span><span className="text-ieee-teal">//</span><span>Build prototypes</span><span className="text-ieee-teal">//</span><span>Share discoveries</span><span className="text-ieee-teal">//</span><span>Repeat together</span></div></section>
 
-      <section className="mx-auto grid max-w-6xl gap-12 px-5 py-24 md:grid-cols-12 md:gap-16 md:px-8 md:py-32">
+      <section className="relative mx-auto grid max-w-6xl gap-12 px-5 py-24 md:grid-cols-12 md:gap-16 md:px-8 md:py-32">
+        <Spark id="home-network" className="right-8 top-12 md:right-2" />
         <MotionReveal className="md:col-span-5"><MotionItem><p className="mb-5 font-display text-xs font-semibold uppercase tracking-[0.18em] text-primary">01 / The network</p><h2 className="text-4xl leading-tight md:text-5xl">A community wired for discovery.</h2><p className="mt-5 leading-7 text-muted-foreground">IEEE Student Branch EMI brings curious students together to explore engineering through practical work, open exchange, and shared momentum.</p><Link to="/about" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-foreground">Meet the members <ArrowRight size={16} /></Link></MotionItem></MotionReveal>
         <MotionReveal className="md:col-span-7"><MotionItem><div className="border-y border-border"><div className="group grid grid-cols-[48px_1fr_auto] items-center gap-5 border-b border-border py-6 transition-colors hover:bg-muted/30"><span className="font-display text-xs text-muted-foreground">01</span><div><h3 className="text-xl">Explore technology</h3><p className="mt-1 text-sm leading-6 text-muted-foreground">Electronics, embedded systems, and ideas still taking shape.</p></div><Cpu size={19} className="text-primary transition-transform group-hover:translate-x-1" /></div><div className="group grid grid-cols-[48px_1fr_auto] items-center gap-5 border-b border-border py-6 transition-colors hover:bg-muted/30"><span className="font-display text-xs text-muted-foreground">02</span><div><h3 className="text-xl">Learn by building</h3><p className="mt-1 text-sm leading-6 text-muted-foreground">Turn theory into prototypes through hands-on collaboration.</p></div><Wrench size={19} className="text-primary transition-transform group-hover:translate-x-1" /></div><div className="group grid grid-cols-[48px_1fr_auto] items-center gap-5 py-6 transition-colors hover:bg-muted/30"><span className="font-display text-xs text-muted-foreground">03</span><div><h3 className="text-xl">Share what works</h3><p className="mt-1 text-sm leading-6 text-muted-foreground">Document experiments, discoveries, and lessons for the next team.</p></div><Lightbulb size={19} className="text-primary transition-transform group-hover:translate-x-1" /></div></div></MotionItem></MotionReveal>
       </section>

@@ -2,6 +2,7 @@ import { useEffect, useState, type ReactNode } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { ArrowUpRight, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Spark } from "@/components/Spark"
 
 const links = [
   { label: "Home", to: "/" },
@@ -59,6 +60,7 @@ function ClubFooter() {
   return (
     <footer className="on-brand brand-band relative overflow-hidden">
       <div aria-hidden="true" className="flare-line absolute inset-x-0 top-0" />
+      <Spark id="footer" className="right-[7%] top-10" />
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1fr_auto] md:items-end md:px-8">
         <div>
           <Link to="/" className="inline-flex transition-opacity hover:opacity-90"><img src="/assets/emi-lockup-white.png" alt="IEEE · Ecole Mohammadia d’Ingénieurs student branch" className="h-16 w-auto md:h-20" /></Link>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { ClubLayout } from "@/components/ClubShell"
 import { MotionItem, MotionReveal } from "@/components/MotionReveal"
+import { Spark } from "@/components/Spark"
 
 type Mission = {
   id: string
@@ -91,7 +92,7 @@ export default function Projects() {
     </MotionReveal></div></section>
 
     {/* 03 Launch */}
-    <section id="launch" className="scroll-mt-24 on-brand brand-band py-20 md:py-28"><div className="mx-auto max-w-6xl px-5 md:px-8"><MotionReveal>
+    <section id="launch" className="relative scroll-mt-24 on-brand brand-band py-20 md:py-28"><Spark id="projects-launch" className="bottom-14 right-[8%]" /><div className="mx-auto max-w-6xl px-5 md:px-8"><MotionReveal>
       <MotionItem><MissionHeader mission={launch} onBrand /></MotionItem>
       <MotionItem><p className="mt-10 font-display text-2xl font-extrabold text-white md:text-3xl">A prototype is a beginning.</p></MotionItem>
       <MotionItem><div className="mt-8 grid items-stretch gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr]">
