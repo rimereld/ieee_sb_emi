@@ -25,6 +25,7 @@ const cells = [
     { name: "Mohammed Aouine", role: "Cell lead", focus: "Head of the projects cell", linkedin: "https://www.linkedin.com/in/mohamed-aouine-9a143429a" },
     { name: "Oussama Darir", role: "Member", focus: "Technical projects", linkedin: "https://www.linkedin.com/in/oussama-darir/" },
     { name: "Youssef Mzil", role: "Member", focus: "Technical projects", linkedin: "https://www.linkedin.com/in/youssef-mzil-056952325" },
+    { name: "Mohammed El Badizi", role: "Member", focus: "Technical projects", linkedin: "https://www.linkedin.com/in/mohammed-el-badizi-38ab14343" },
   ] },
   { name: "External communication", members: [
     { name: "Sara Ouahmane", role: "Member", focus: "Relations with partners and the public", linkedin: "https://www.linkedin.com/in/sara-ouahmane-579363378" },
