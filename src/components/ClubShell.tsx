@@ -8,6 +8,7 @@ const links = [
   { label: "Home", to: "/" },
   { label: "About us", to: "/about" },
   { label: "Projects", to: "/projects" },
+  { label: "Sponsors", to: "/sponsors" },
   { label: "Contact", to: "/contact" },
 ]
 
@@ -67,7 +68,7 @@ function ClubFooter() {
           <p className="mt-5 max-w-md text-sm leading-6 text-muted-foreground">A place to learn by making, share what you discover, and meet people who care about engineering.</p>
           <p className="shine-type mt-4 text-sm text-white/90">Let’s give it a shine</p>
         </div>
-        <div className="flex flex-wrap gap-x-6 gap-y-3 font-display text-sm font-semibold"><Link className="text-white/85 transition-colors hover:text-white" to="/about">About us</Link><Link className="text-white/85 transition-colors hover:text-white" to="/projects">Projects</Link><Link className="text-white/85 transition-colors hover:text-white" to="/join">Join us</Link><Link className="text-white/85 transition-colors hover:text-white" to="/contact">Contact</Link></div>
+        <div className="flex flex-wrap gap-x-6 gap-y-3 font-display text-sm font-semibold"><Link className="text-white/85 transition-colors hover:text-white" to="/about">About us</Link><Link className="text-white/85 transition-colors hover:text-white" to="/projects">Projects</Link><Link className="text-white/85 transition-colors hover:text-white" to="/sponsors">Sponsors</Link><Link className="text-white/85 transition-colors hover:text-white" to="/join">Join us</Link><Link className="text-white/85 transition-colors hover:text-white" to="/contact">Contact</Link></div>
         <div className="border-t border-white/25 pt-5 text-xs text-muted-foreground md:col-span-2">© 2026 IEEE EMI Student Branch · Ecole Mohammadia d’Ingénieurs</div>
       </div>
     </footer>

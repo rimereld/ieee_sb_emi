@@ -8,6 +8,7 @@ import About from "./pages/About"
 import Projects from "./pages/Projects"
 import Join from "./pages/Join"
 import Contact from "./pages/Contact"
+import Sponsors from "./pages/Sponsors"
 import NotFound from "./pages/NotFound"
 
 const App = () => (
@@ -21,6 +22,7 @@ const App = () => (
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/join" element={<Join />} />
+        <Route path="/sponsors" element={<Sponsors />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
